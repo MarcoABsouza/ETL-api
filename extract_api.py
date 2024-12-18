@@ -12,14 +12,13 @@ from logging import basicConfig, getLogger
 # Importar Base e BitcoinPreco do database.py
 from database import Base, BitcoinPreco
 
+
 # Configuração Logfire
 logfire.configure()
 basicConfig(handlers=[logfire.LogfireLoggingHandler()])
 logger = getLogger(__name__)
 logger.setLevel(logging.INFO)
 logfire.instrument_requests()
-
-
 
 # Carrega variáveis de ambiente .env
 load_dotenv()
